@@ -1,0 +1,39 @@
+1. Description of the project and objectives
+-Communication between users through online messages. Ability to personalize
+ chat look and improve your status by achieving rank points.
+
+Features:(total: 1000h)
+ -Accounts (total: 400h)
+    -register (100h)
+    -log in (90h)
+    -users profile (115h)
+    -change password(95h)
+      +remove user
+ -Message Manager (total: 410h)
+    -background customizer (140h)
+      + one option by default
+      + new backgrounds from daily gift
+      + with price
+    -user prestige (name by rank) (90h)
+    -files button (upload photos/files in conversation) (100h)
+    -pickup line (80h)
+      +only with price
+ -daily gift (total: 80h)
+ -users list (total: 110h)
+
+2. List of all the screens with all the features
+
+-Logo screen
+  -Log in/Register(+ keep me logged in)
+-Daily gift screen + rewards
+-User profile
+  -User name, profile pic, other info
+-Contact list
+  -List with all the users
+-Messages log
+  -Latest messages 
+  -New uid message
+     -Message manager
+-More
+  -Settings, log out
+-Admin panel for admin users

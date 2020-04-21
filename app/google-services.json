@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "334835684434",
+    "firebase_url": "https://uchat-750ef.firebaseio.com",
+    "project_id": "uchat-750ef",
+    "storage_bucket": "uchat-750ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334835684434:android:3b7574d1c44b0c756ffb8b",
+        "android_client_info": {
+          "package_name": "com.koddev.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334835684434-emaicedlrcj5sj1q8mk88v4uts3agrps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTaGgEES9xci7C0M6tDXByP9C2rD8-yGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "334835684434-emaicedlrcj5sj1q8mk88v4uts3agrps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
