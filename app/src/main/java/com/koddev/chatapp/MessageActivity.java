@@ -2,7 +2,13 @@ package com.koddev.chatapp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -33,6 +39,11 @@ import com.koddev.chatapp.Notifications.MyResponse;
 import com.koddev.chatapp.Notifications.Sender;
 import com.koddev.chatapp.Notifications.Token;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -96,11 +107,30 @@ public class MessageActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
         btn_send = findViewById(R.id.btn_send);
         text_send = findViewById(R.id.text_send);
-
         intent = getIntent();
         userid = intent.getStringExtra("userid");
         fuser = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                if (user.getBackgroundImageURL().equals("default")){
+                    recyclerView.setBackgroundResource(R.drawable.background_cat);
+                }
+                else {
+                    recyclerView.setBackgroundResource(R.drawable.lowcat);
+                    //recyclerView.setBackground(getDrawableFromUrl(user.getBackgroundImageURL()));
 
+                    //Glide.with(getApplicationContext()).load(user.getBackgroundImageURL()).into(recyclerView);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                //databaseError.getMessage(); <- get message for debug
+            }
+        });
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -313,4 +343,17 @@ public class MessageActivity extends AppCompatActivity {
         status("offline");
         currentUser("none");
     }
+//    public static Drawable getDrawableFromUrl(String urlString) {
+//        URL url = new URL(urlString);
+//        try {
+//            InputStream is = url.openStream();
+//            Drawable d = Drawable.createFromStream(is, "src");
+//            return d;
+//        } catch (MalformedURLException e) {
+//            // e.printStackTrace();
+//        } catch (IOException e) {
+//            // e.printStackTrace();
+//        }
+//        return null;
+//    }
 }
