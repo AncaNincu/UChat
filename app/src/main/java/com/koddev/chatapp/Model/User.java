@@ -7,19 +7,20 @@ public class User {
     private String imageURL;
     private String status;
     private String search;
+    private String backgroundImageURL;
 
-    public User(String id, String username, String imageURL, String status, String search) {
+    public User(String id, String username, String imageURL, String status, String search, String backgroundImageURL) {
         this.id = id;
         this.username = username;
         this.imageURL = imageURL;
         this.status = status;
         this.search = search;
+        this.backgroundImageURL = backgroundImageURL;
     }
 
     public User() {
 
     }
-
     public String getId() {
         return id;
     }
@@ -59,4 +60,9 @@ public class User {
     public void setSearch(String search) {
         this.search = search;
     }
+
+    public String getBackgroundImageURL()
+    { return backgroundImageURL; }
+
+    public void setBackgroundImageURL(String backgroundImageURL) { this.backgroundImageURL = backgroundImageURL; }
 }

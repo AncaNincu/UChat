@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -69,6 +70,13 @@ public class MainActivity extends AppCompatActivity {
                     //change this
                     Glide.with(getApplicationContext()).load(user.getImageURL()).into(profile_image);
                 }
+//                if (user.getBackgroundImage().equals("default")){
+//                    background_image.setImageResource(R.drawable.background_cat);
+//                } else {
+//
+//                    //change this
+//                    Glide.with(getApplicationContext()).load(user.getBackgroundImage()).into(background_image);
+//                }
             }
 
             @Override
@@ -129,6 +137,9 @@ public class MainActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(MainActivity.this, StartActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 return true;
+            case R.id.background:
+                Intent menuIntent = new Intent(this, BackgroundActivity.class);
+                startActivity(menuIntent);
         }
 
         return false;
