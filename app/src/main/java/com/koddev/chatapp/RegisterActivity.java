@@ -80,13 +80,14 @@ public class RegisterActivity extends AppCompatActivity {
                             hashMap.put("id", userid);
                             hashMap.put("username", username);
                             hashMap.put("imageURL", "default");
+                            hashMap.put("backgroundImageURL", "default");
                             hashMap.put("status", "offline");
                             hashMap.put("search", username.toLowerCase());
 
                             reference.setValue(hashMap);
                             reference = reference.child("background");
                             HashMap<String, String> hashMap2 = new HashMap<>();
-                            hashMap2.put("bg1", "default");
+                            hashMap2.put("bg1", "https://firebasestorage.googleapis.com/v0/b/uchat-750ef.appspot.com/o/uploads%2Fbackground%2Flowcat.PNG?alt=media&token=1cd4e65e-f6cc-402a-bb9f-0f3139dd742b");
                             reference.setValue(hashMap2).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {

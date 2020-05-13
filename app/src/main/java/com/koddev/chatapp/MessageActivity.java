@@ -91,7 +91,7 @@ public class MessageActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MessageActivity.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                startActivity(new Intent(MessageActivity.this, MainActivity.class));
             }
         });
 
@@ -119,10 +119,7 @@ public class MessageActivity extends AppCompatActivity {
                     recyclerView.setBackgroundResource(R.drawable.background_cat);
                 }
                 else {
-                    recyclerView.setBackgroundResource(R.drawable.lowcat);
-                    //recyclerView.setBackground(getDrawableFromUrl(user.getBackgroundImageURL()));
-
-                    //Glide.with(getApplicationContext()).load(user.getBackgroundImageURL()).into(recyclerView);
+                    recyclerView.setBackground(getImageDrawableRes(user.getBackgroundImageURL()));
                 }
             }
 
@@ -343,17 +340,21 @@ public class MessageActivity extends AppCompatActivity {
         status("offline");
         currentUser("none");
     }
-//    public static Drawable getDrawableFromUrl(String urlString) {
-//        URL url = new URL(urlString);
-//        try {
-//            InputStream is = url.openStream();
-//            Drawable d = Drawable.createFromStream(is, "src");
-//            return d;
-//        } catch (MalformedURLException e) {
-//            // e.printStackTrace();
-//        } catch (IOException e) {
-//            // e.printStackTrace();
-//        }
-//        return null;
-//    }
+
+    protected Drawable getImageDrawableRes(String drawableRes)
+    {
+        Integer res;
+        Drawable d;
+        Bitmap bitmap = null;
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        try {
+            URL url = new URL(drawableRes);
+            bitmap =  BitmapFactory.decodeStream((InputStream)url.getContent());
+        } catch (IOException e) {
+            //Log.e(TAG, e.getMessage());
+        }
+        d = new BitmapDrawable(getResources(), bitmap);
+        return d;
+    }
 }

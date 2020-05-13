@@ -67,16 +67,8 @@ public class MainActivity extends AppCompatActivity {
                     profile_image.setImageResource(R.mipmap.ic_launcher);
                 } else {
 
-                    //change this
                     Glide.with(getApplicationContext()).load(user.getImageURL()).into(profile_image);
                 }
-//                if (user.getBackgroundImage().equals("default")){
-//                    background_image.setImageResource(R.drawable.background_cat);
-//                } else {
-//
-//                    //change this
-//                    Glide.with(getApplicationContext()).load(user.getBackgroundImage()).into(background_image);
-//                }
             }
 
             @Override

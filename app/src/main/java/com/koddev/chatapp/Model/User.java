@@ -1,5 +1,8 @@
 package com.koddev.chatapp.Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
 
     private String id;
@@ -8,6 +11,7 @@ public class User {
     private String status;
     private String search;
     private String backgroundImageURL;
+    protected List<Background> backgroundList = new ArrayList<Background>();
 
     public User(String id, String username, String imageURL, String status, String search, String backgroundImageURL) {
         this.id = id;
@@ -16,6 +20,8 @@ public class User {
         this.status = status;
         this.search = search;
         this.backgroundImageURL = backgroundImageURL;
+        Background defBackground = new Background("default");
+        backgroundList.add(defBackground);
     }
 
     public User() {
