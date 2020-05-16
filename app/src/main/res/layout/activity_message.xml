@@ -48,29 +48,39 @@
         android:background="@drawable/lowcat" />
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:padding="5dp"
         android:id="@+id/bottom"
-        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content">
+        android:layout_marginBottom="7dp"
+        android:background="#fff"
+        android:padding="5dp">
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/text_send"
-            android:background="@android:color/transparent"
-            android:hint="Type a message..."
+            android:layout_width="311dp"
+            android:layout_height="39dp"
+            android:layout_toRightOf="@id/btn_upload"
             android:layout_toLeftOf="@id/btn_send"
-            android:layout_centerVertical="true"/>
+            android:background="@android:color/transparent"
+            android:hint="Type a message..." />
 
         <ImageButton
+            android:id="@+id/btn_send"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@drawable/ic_action_name"
-            android:id="@+id/btn_send"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
+            android:background="@drawable/ic_action_name" />
+
+        <ImageButton
+            android:id="@+id/btn_upload"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/upload_image" />
+
 
     </RelativeLayout>
 
