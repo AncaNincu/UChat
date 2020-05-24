@@ -25,6 +25,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.koddev.chatapp.Fragments.ChatsFragment;
+import com.koddev.chatapp.Fragments.GiftFragment;
 import com.koddev.chatapp.Fragments.ProfileFragment;
 import com.koddev.chatapp.Fragments.UsersFragment;
 import com.koddev.chatapp.Model.Chat;
@@ -101,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
                 viewPagerAdapter.addFragment(new UsersFragment(), "Users");
                 viewPagerAdapter.addFragment(new ProfileFragment(), "Profile");
+                viewPagerAdapter.addFragment(new GiftFragment(), "Gift");
 
                 viewPager.setAdapter(viewPagerAdapter);
 
