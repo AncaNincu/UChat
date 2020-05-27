@@ -455,21 +455,4 @@ public class MessageActivity extends AppCompatActivity {
         MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
     }
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.chat_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-
-            case R.id.pickupline:
-                Intent menuIntent1 = new Intent(this, PickupActivity.class);
-                startActivity(menuIntent1);
-        }
-
-        return false;
-    }
 }
